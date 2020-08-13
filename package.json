@@ -1,0 +1,23 @@
+{
+  "name": "bdo-languagedata",
+  "version": "1.0.0",
+  "description": "Localization file decompress / compress library for Black Desert Online.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:lehieugch68/Node-BDO-LanguageData.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Black Desert Online",
+    "Javascript"
+  ],
+  "author": "Le Hieu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lehieugch68/Node-BDO-LanguageData/issues"
+  },
+  "homepage": "https://github.com/lehieugch68/Node-BDO-LanguageData#readme"
+}
