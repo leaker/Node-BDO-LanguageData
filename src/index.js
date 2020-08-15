@@ -5,11 +5,11 @@ const utf16le_bom = "\ufeff";
 
 const encrypt = (file) => {
 	return new Promise(async (resolve, reject) => {
-		let allLines = trim_Start(await fs.promises.readFile(file, 'utf16le'), utf16le_bom).split('\n');
 		let chunks = [];
-		for (let line of allLines) {
-			if (line.trim().length <= 0) break;
-			try {
+		try {
+			let allLines = trim_Start(await fs.promises.readFile(file, 'utf16le'), utf16le_bom).replace(/\r/g, '').split('\n');
+			for (let line of allLines) {
+				if (line.trim().length <= 0) continue;
 				let content = line.split('\t').map((e, i) => { return i>4 ? trim_Start(e.replace(/<lf>/g, "\n").replace(/"/g, '').replace(/<quot>/g, `"`), `'`) : +e });
 				let strSize = content[5].length;
 				let size = 4+4+4+2+1+1+(strSize*2)+4;
@@ -23,9 +23,9 @@ const encrypt = (file) => {
 				buffer.writeUInt8(content[4], i+=1);
 				buffer.write(content[5], i+=1, buffer.length-i, 'utf16le');
 				chunks.push(buffer);
-			} catch (err) {
-				return reject(err);
 			}
+		} catch (err) {
+			return reject(err);
 		}
 		return resolve(Buffer.concat(chunks));
 	})

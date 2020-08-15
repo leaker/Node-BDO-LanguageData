@@ -15,20 +15,20 @@ const fs = require('fs')
 const bdo_languagedata = require('bdo-languagedata')
 
 //Decompress
-
 bdo_languagedata.decompress('./languagedata_en.loc').then(result => {
 	fs.writeFileSync('./languagedata_en_decompress.tsv', result, 'utf16le');
 })
 
 //Compress
-
 bdo_languagedata.compress('./languagedata_en_decompress.tsv').then(result => {
 	fs.writeFileSync('./languagedata_en_compress.loc', result);
 })
 ```
 
-For editing:
+For editing (I recommend using Excel)
 ```
 <quout> = "
 <lf> = \n
 ```
+
+Always save plain text file with UTF16 LE BOM encoding.
