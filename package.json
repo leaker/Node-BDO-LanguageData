@@ -1,6 +1,6 @@
 {
   "name": "bdo-languagedata",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Localization file decompress / compress library for Black Desert Online.",
   "main": "src/index.js",
   "repository": {
