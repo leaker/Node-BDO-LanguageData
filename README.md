@@ -24,11 +24,3 @@ bdo_languagedata.compress('./languagedata_en_decompress.tsv').then(result => {
 	fs.writeFileSync('./languagedata_en_compress.loc', result);
 })
 ```
-
-For editing (I recommend using Excel)
-```
-<quout> = "
-<lf> = \n
-```
-
-Always save plain text file with UTF16 LE BOM encoding.
