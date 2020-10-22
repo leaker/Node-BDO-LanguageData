@@ -2,13 +2,13 @@
 
 Localization file decompress/compress library for Black Desert Online.
 
-Install:
+## Install:
 
 ```
 npm i bdo-languagedata
 ```
 
-Example:
+## Usage:
 
 ```
 const fs = require('fs')
